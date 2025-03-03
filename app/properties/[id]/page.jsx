@@ -1,3 +1,9 @@
+"use client"
+
 export default function PropertyPage() {
-	return <div>PropertyPage</div>
+	return (
+		<div>
+			<h1>propertypage</h1>
+		</div>
+	)
 }
