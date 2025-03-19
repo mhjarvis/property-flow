@@ -13,7 +13,6 @@ export default function Navbar() {
 	const [isLoggedIn, setIsLoggedIn] = useState(true)
 
 	const pathname = usePathname()
-	console.log(pathname)
 
 	return (
 		<nav className="bg-blue-700 border-b border-blue-500">

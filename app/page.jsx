@@ -3,7 +3,7 @@ import Hero from "@/components/Hero"
 import HomeProperties from "@/components/HomeProperties"
 
 const HomePage = () => {
-	// console.log(process.env.MONGODB_URI) // test mongodb connection
+	// (process.env.MONGODB_URI) // test mongodb connection
 
 	return (
 		<div>
