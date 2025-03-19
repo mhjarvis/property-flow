@@ -2,8 +2,8 @@ import InfoBoxes from "@/components/InfoBoxes"
 import Hero from "@/components/Hero"
 import HomeProperties from "@/components/HomeProperties"
 
-export default function HomePage() {
-	console.log(process.env.MONGODB_URI)
+const HomePage = () => {
+	// console.log(process.env.MONGODB_URI) // test mongodb connection
 
 	return (
 		<div>
@@ -13,3 +13,5 @@ export default function HomePage() {
 		</div>
 	)
 }
+
+export default HomePage
