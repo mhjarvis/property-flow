@@ -1,7 +1,21 @@
 import PropertyCard from "@/components/PropertyCard"
-import properties from "@/properties.json"
 
-export default function PropertiesPage() {
+async function fetchProperties() {
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`)
+
+		if (!res.ok) {
+			throw new Error("Failed to fetch properties")
+		}
+		const data = await res.json()
+		return data.properties
+	} catch (error) {
+		console.error(error)
+	}
+}
+const PropertiesPage = async () => {
+	const properties = await fetchProperties()
+
 	return (
 		<section className="px-4 py-6">
 			<div className="container-xl lg:container m-auto px-4 py-6">
@@ -9,7 +23,7 @@ export default function PropertiesPage() {
 					<p> No properties found</p>
 				) : (
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-						{properties.map((property, index) => (
+						{properties.map((property) => (
 							<PropertyCard key={property._id} property={property} />
 						))}
 					</div>
@@ -18,3 +32,5 @@ export default function PropertiesPage() {
 		</section>
 	)
 }
+
+export default PropertiesPage
