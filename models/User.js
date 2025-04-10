@@ -1,5 +1,4 @@
 import { Schema, model, models } from "mongoose"
-import { unique } from "next/dist/build/utils"
 
 const UserSchema = new Schema(
 	{
@@ -10,7 +9,6 @@ const UserSchema = new Schema(
 		},
 		username: {
 			type: String,
-			unique: [true, "Username is already taken"],
 			required: [true, "Username is required"],
 		},
 		image: {
@@ -28,6 +26,6 @@ const UserSchema = new Schema(
 	}
 )
 
-const User = models.user || model("User", UserSchema)
+const User = models.User || model("User", UserSchema)
 
 export default User
