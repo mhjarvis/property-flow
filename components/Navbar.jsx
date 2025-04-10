@@ -22,10 +22,9 @@ export default function Navbar() {
 			const res = await getProviders()
 			setProviders(res)
 		}
+
 		setAuthProviders()
 	}, [])
-
-	console.log(providers)
 
 	return (
 		<nav className="bg-blue-700 border-b border-blue-500">
