@@ -10,6 +10,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react"
 
 export default function Navbar() {
 	const { data: session } = useSession()
+	const profileImage = session?.user?.image
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
@@ -167,8 +168,10 @@ export default function Navbar() {
 										<span className="sr-only">Open user menu</span>
 										<Image
 											className="h-8 w-8 rounded-full"
-											src={profileDefault}
+											src={profileImage || profileDefault}
 											alt=""
+											width={40}
+											height={40}
 										/>
 									</button>
 								</div>
